@@ -12,6 +12,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
 using ProjectSaleMVC.Models;
 using ProjectSaleMVC.Data;
+using ProjectSaleMVC.Services;
 
 namespace ProjectSaleMVC {
     public class Startup {
@@ -37,6 +38,7 @@ namespace ProjectSaleMVC {
              builder.MigrationsAssembly("ProjectSaleMVC")));
 
             services.AddScoped<SeedingService>();//registra o serviço na injeção de dependência da aplicação
+            services.AddScoped<SellerService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
